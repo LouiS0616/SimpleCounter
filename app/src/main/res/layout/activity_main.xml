@@ -53,20 +53,26 @@
             app:layout_constraintEnd_toEndOf="@+id/horizontal" >
 
             <jp.louis.nsr.simplecounter.widgets.HoldableButton
+                xmlns:original="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/plusButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Widget.AppCompat.Button"
                 android:text="@string/plus_button"
-                android:textSize="@dimen/plus_minus_button" />
+                android:textSize="@dimen/plus_minus_button"
+                original:delay_msec="@integer/delay_msec"
+                original:interval_msec="@integer/interval_msec" />
 
             <jp.louis.nsr.simplecounter.widgets.HoldableButton
+                xmlns:original="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/minusButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Widget.AppCompat.Button"
                 android:text="@string/minus_button"
-                android:textSize="@dimen/plus_minus_button" />
+                android:textSize="@dimen/plus_minus_button"
+                original:delay_msec="@integer/delay_msec"
+                original:interval_msec="@integer/interval_msec" />
 
         </LinearLayout>
 

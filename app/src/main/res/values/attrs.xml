@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HoldableButton">
+        <attr name="delay_msec" format="integer" />
+        <attr name="interval_msec" format="integer" />
+    </declare-styleable>
+</resources>

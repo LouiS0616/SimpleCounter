@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 
+import jp.louis.nsr.simplecounter.widgets.HoldableButton;
 import jp.louis.nsr.simplecounter.widgets.NumberView;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,21 +51,21 @@ public class MainActivity extends AppCompatActivity {
         );
 
         //
-        Button plusButton = findViewById(R.id.plusButton);
-        plusButton.setOnClickListener(
-            new View.OnClickListener() {
+        HoldableButton plusButton = findViewById(R.id.plusButton);
+        plusButton.setMainTask(
+            new HoldableButton.MainTask() {
                 @Override
-                public void onClick(View view) {
+                public void doTask() {
                     numberView.addNumber(changeWidth);
                 }
             }
         );
 
-        Button minusButton = findViewById(R.id.minusButton);
-        minusButton.setOnClickListener(
-            new View.OnClickListener() {
+        HoldableButton minusButton = findViewById(R.id.minusButton);
+        minusButton.setMainTask(
+            new HoldableButton.MainTask() {
                 @Override
-                public void onClick(View view) {
+                public void doTask() {
                     numberView.addNumber(-changeWidth);
                 }
             }

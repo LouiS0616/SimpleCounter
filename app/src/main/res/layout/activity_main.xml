@@ -39,6 +39,7 @@
             android:id="@+id/numberPicker"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
             app:layout_constraintEnd_toStartOf="@+id/plusMinusButtons"
             app:layout_constraintStart_toEndOf="@+id/numberView" />
 

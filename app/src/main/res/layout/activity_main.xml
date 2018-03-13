@@ -52,17 +52,19 @@
             app:layout_constraintBottom_toBottomOf="@+id/horizontal"
             app:layout_constraintEnd_toEndOf="@+id/horizontal" >
 
-            <Button
+            <jp.louis.nsr.simplecounter.widgets.HoldableButton
                 android:id="@+id/plusButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/Widget.AppCompat.Button"
                 android:text="@string/plus_button"
                 android:textSize="@dimen/plus_minus_button" />
 
-            <Button
+            <jp.louis.nsr.simplecounter.widgets.HoldableButton
                 android:id="@+id/minusButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/Widget.AppCompat.Button"
                 android:text="@string/minus_button"
                 android:textSize="@dimen/plus_minus_button" />
 

@@ -70,14 +70,24 @@ public class MainActivity extends AppCompatActivity {
             }
         );
 
+        //
         Button resetButton = findViewById(R.id.resetButton);
         resetButton.setOnClickListener(
             new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    numberView.setText(String.valueOf(defaultValue));
+                }
+            }
+        );
+        resetButton.setOnLongClickListener(
+            new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
                     numberPicker.setValue(defaultChangeWidth);
                     changeWidth = defaultChangeWidth;
                     numberView.setText(String.valueOf(defaultValue));
+                    return true;
                 }
             }
         );

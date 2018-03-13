@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Simple Counter</string>
+    <string name="plus_button">+</string>
+    <string name="minus_button">-</string>
+    <string name="default_number">0</string>
+    <string name="reset_button">Reset</string>
+</resources>

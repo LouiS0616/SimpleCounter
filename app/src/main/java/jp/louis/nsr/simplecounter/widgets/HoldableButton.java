@@ -11,8 +11,8 @@ import android.view.View;
 import jp.louis.nsr.simplecounter.R;
 
 public class HoldableButton extends AppCompatButton {
-    private int delayMsec = 400;
-    private int intervalMsec = 100;
+    private int delayMsec;
+    private int intervalMsec;
 
     private MainTask mainTask = new MainTask() {
         @Override

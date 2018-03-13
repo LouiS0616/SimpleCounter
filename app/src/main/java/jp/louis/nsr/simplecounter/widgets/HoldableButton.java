@@ -1,11 +1,14 @@
 package jp.louis.nsr.simplecounter.widgets;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Handler;
 import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import jp.louis.nsr.simplecounter.R;
 
 public class HoldableButton extends AppCompatButton {
     private int delayMsec = 400;
@@ -26,7 +29,21 @@ public class HoldableButton extends AppCompatButton {
     }
     public HoldableButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        initAttrs(
+            context.obtainStyledAttributes(
+                attrs, R.styleable.HoldableButton, defStyleAttr, 0
+            )
+        );
         initListener();
+    }
+    private void initAttrs(TypedArray typedArray) {
+        delayMsec = typedArray.getInteger(
+            R.styleable.HoldableButton_delay_msec, 400
+        );
+        intervalMsec = typedArray.getInteger(
+            R.styleable.HoldableButton_interval_msec, 100
+        );
+        typedArray.recycle();
     }
     private void initListener() {
         setOnClickListener(

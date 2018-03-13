@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
-import android.widget.TextView;
+
+import jp.louis.nsr.simplecounter.widgets.NumberView;
 
 public class MainActivity extends AppCompatActivity {
     private final int defaultValue = 0;
@@ -13,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private final int defaultChangeWidth = 1;
     private int changeWidth = defaultChangeWidth;
 
-    private TextView numberView;
+    private NumberView numberView;
     private NumberPicker numberPicker;
 
     @Override
@@ -54,9 +55,7 @@ public class MainActivity extends AppCompatActivity {
             new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    numberView.setText(
-                        String.valueOf(Integer.valueOf(numberView.getText().toString()) + changeWidth)
-                    );
+                    numberView.addNumber(changeWidth);
                 }
             }
         );
@@ -66,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
             new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    numberView.setText(
-                        String.valueOf(Integer.valueOf(numberView.getText().toString()) - changeWidth)
-                    );
+                    numberView.addNumber(-changeWidth);
                 }
             }
         );

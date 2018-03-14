@@ -5,6 +5,9 @@ import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
 public class NumberView extends AppCompatTextView {
+    @SuppressWarnings("FieldCanBeLocal")
+    private final int defaultNumber = 0;
+
     public NumberView(Context context) {
         this(context, null);
     }
@@ -13,6 +16,10 @@ public class NumberView extends AppCompatTextView {
     }
     public NumberView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    public void reset() {
+        setNumber(defaultNumber);
     }
 
     private void setNumber(int number) {

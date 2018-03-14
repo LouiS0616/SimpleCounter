@@ -10,8 +10,6 @@ import jp.louis.nsr.simplecounter.widgets.HoldableButton;
 import jp.louis.nsr.simplecounter.widgets.NumberView;
 
 public class MainActivity extends AppCompatActivity {
-    private final int defaultValue = 0;
-
     private final int defaultChangeWidth = 1;
     private int changeWidth = defaultChangeWidth;
 
@@ -23,18 +21,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setViews();
         initViews();
     }
 
-    private void setViews() {
+    private void initViews() {
         numberView = findViewById(R.id.numberView);
         numberPicker = findViewById(R.id.numberPicker);
-    }
 
-    private void initViews() {
         //
-        numberView.setText(String.valueOf(defaultValue));
+        numberView.reset();
 
         //
         numberPicker.setMinValue(1);
@@ -77,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    numberView.setText(String.valueOf(defaultValue));
+                    numberView.reset();
                 }
             }
         );
@@ -87,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 public boolean onLongClick(View view) {
                     numberPicker.setValue(defaultChangeWidth);
                     changeWidth = defaultChangeWidth;
-                    numberView.setText(String.valueOf(defaultValue));
+                    numberView.reset();
                     return true;
                 }
             }

@@ -39,22 +39,12 @@ public class MainActivity extends AppCompatActivity {
         //
         HoldableButton plusButton = findViewById(R.id.plusButton);
         plusButton.setMainTask(
-            new HoldableButton.MainTask() {
-                @Override
-                public void doTask() {
-                    numberView.addNumber(changeWidth);
-                }
-            }
+            () -> numberView.addNumber(changeWidth)
         );
 
         HoldableButton minusButton = findViewById(R.id.minusButton);
         minusButton.setMainTask(
-            new HoldableButton.MainTask() {
-                @Override
-                public void doTask() {
-                    numberView.addNumber(-changeWidth);
-                }
-            }
+            () -> numberView.addNumber(-changeWidth)
         );
 
         //

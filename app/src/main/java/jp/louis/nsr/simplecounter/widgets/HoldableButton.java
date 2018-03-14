@@ -14,13 +14,12 @@ public class HoldableButton extends AppCompatButton {
     private int delayMsec;
     private int intervalMsec;
 
-    private MainTask mainTask = new MainTask() {
-        @Override
-        public void doTask() {}
-    };
+    private MainTask mainTask;
     private Handler handler = new Handler();
     private Runnable runnableCode;
 
+    //
+    //
     public HoldableButton(Context context) {
         this(context, null);
     }
@@ -34,7 +33,13 @@ public class HoldableButton extends AppCompatButton {
                 attrs, R.styleable.HoldableButton, defStyleAttr, 0
             )
         );
-        initListener();
+        setMainTask(
+            new MainTask() {
+                @Override
+                public void doTask() {
+                }
+            }
+        );
     }
     private void initAttrs(TypedArray typedArray) {
         delayMsec = typedArray.getInteger(
@@ -87,11 +92,14 @@ public class HoldableButton extends AppCompatButton {
         );
     }
 
+    //
     public void setMainTask(MainTask mainTask) {
         this.mainTask = mainTask;
         initListener();
     }
 
+    //
+    //
     abstract public static class MainTask {
         abstract public void doTask();
     }

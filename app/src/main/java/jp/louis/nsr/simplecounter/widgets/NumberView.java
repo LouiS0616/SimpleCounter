@@ -16,8 +16,8 @@ public class NumberView extends AppCompatTextView {
     }
     public NumberView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        reset();
     }
-
     public void reset() {
         setNumber(defaultNumber);
     }

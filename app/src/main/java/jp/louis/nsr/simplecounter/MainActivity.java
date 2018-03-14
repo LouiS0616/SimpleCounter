@@ -29,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
         numberPicker = findViewById(R.id.numberPicker);
 
         //
-        numberView.reset();
-
-        //
         numberPicker.setMinValue(1);
         numberPicker.setMaxValue(20);
         numberPicker.setValue(defaultChangeWidth);

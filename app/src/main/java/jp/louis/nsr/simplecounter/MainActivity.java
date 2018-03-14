@@ -2,7 +2,6 @@ package jp.louis.nsr.simplecounter;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 
@@ -34,12 +33,7 @@ public class MainActivity extends AppCompatActivity {
         numberPicker.setValue(defaultChangeWidth);
 
         numberPicker.setOnValueChangedListener(
-            new NumberPicker.OnValueChangeListener() {
-                @Override
-                public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                    changeWidth = newVal;
-                }
-            }
+            (picker, oldVal, newVal) -> changeWidth = newVal
         );
 
         //
@@ -66,22 +60,14 @@ public class MainActivity extends AppCompatActivity {
         //
         Button resetButton = findViewById(R.id.resetButton);
         resetButton.setOnClickListener(
-            new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    numberView.reset();
-                }
-            }
-        );
+            view -> numberView.reset()
+         );
         resetButton.setOnLongClickListener(
-            new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    numberPicker.setValue(defaultChangeWidth);
-                    changeWidth = defaultChangeWidth;
-                    numberView.reset();
-                    return true;
-                }
+            view -> {
+                numberPicker.setValue(defaultChangeWidth);
+                changeWidth = defaultChangeWidth;
+                numberView.reset();
+                return true;
             }
         );
     }

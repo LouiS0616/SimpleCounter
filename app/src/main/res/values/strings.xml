@@ -4,4 +4,6 @@
     <string name="minus_button">-</string>
     <string name="reset_button">Reset</string>
     <string name="sample_switch">It is just a sample.</string>
+
+    <string name="setting_speed">speed</string>
 </resources>

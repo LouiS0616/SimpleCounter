@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import jp.louis.nsr.simplecounter.R;
@@ -28,6 +29,7 @@ public class SeekWithLabel extends ConstraintLayout {
                 attrs, R.styleable.SeekWithLabel, defStyleAttr, 0
             )
         );
+        initViews();
     }
     private void initAttrs(TypedArray typedArray) {
         TextView label = findViewById(R.id.label);
@@ -36,5 +38,25 @@ public class SeekWithLabel extends ConstraintLayout {
         label.setText(
             typedArray.getString(R.styleable.SeekWithLabel_label)
         );
+    }
+    private void initViews() {
+        final NumberView value = findViewById(R.id.value);
+        value.setNumber(0);
+
+        SeekBar seekBar = findViewById(R.id.seekBar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                value.setNumber(progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
     }
 }

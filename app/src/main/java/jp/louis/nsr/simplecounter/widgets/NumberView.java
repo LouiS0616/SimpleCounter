@@ -22,7 +22,7 @@ public class NumberView extends AppCompatTextView {
         setNumber(defaultNumber);
     }
 
-    private void setNumber(int number) {
+    public void setNumber(int number) {
         setText(
             String.valueOf(number)
         );

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorText" />
 
-    <jp.louis.nsr.simplecounter.widgets.NumberView
+    <jp.louis.nsr.simplecounter.widgets.numberview.NumberView
         android:id="@+id/value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

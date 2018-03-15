@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="@+id/main"
             app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
-        <jp.louis.nsr.simplecounter.widgets.NumberView
+        <jp.louis.nsr.simplecounter.widgets.numberview.IntegerView
             android:id="@+id/numberView"
             android:layout_width="0dp"
             android:layout_height="match_parent"

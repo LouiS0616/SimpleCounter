@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.NumberPicker;
 
 import jp.louis.nsr.simplecounter.widgets.HoldableButton;
-import jp.louis.nsr.simplecounter.widgets.NumberView;
+import jp.louis.nsr.simplecounter.widgets.numberview.NumberView;
 
 public class MainActivity extends AppCompatActivity {
     private final int defaultChangeWidth = 1;

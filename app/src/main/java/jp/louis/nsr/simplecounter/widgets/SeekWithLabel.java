@@ -9,6 +9,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import jp.louis.nsr.simplecounter.R;
+import jp.louis.nsr.simplecounter.widgets.numberview.NumberView;
 
 
 public class SeekWithLabel extends ConstraintLayout {

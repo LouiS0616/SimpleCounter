@@ -1,4 +1,4 @@
-package jp.louis.nsr.simplecounter.widgets;
+package jp.louis.nsr.simplecounter.widgets.numberview;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatTextView;

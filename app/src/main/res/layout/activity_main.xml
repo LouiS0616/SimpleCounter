@@ -78,4 +78,15 @@
 
     </android.support.constraint.ConstraintLayout>
 
+    <Switch
+        android:id="@+id/sampleSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/sample_switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal" />
+
+
 </android.support.constraint.ConstraintLayout>

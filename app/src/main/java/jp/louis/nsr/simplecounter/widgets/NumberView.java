@@ -37,27 +37,23 @@ public class NumberView extends AppCompatTextView {
             R.styleable.NumberView_default_value, .0f
         );
 
-        //
-        if(typedArray.hasValue(R.styleable.NumberView_display_mode)) {
-            int mode = typedArray.getInt(
-                R.styleable.NumberView_display_mode, -1
-            );
-            switch(mode) {
-            case 0:
-                // integer_mode
-                decimalFormat = new DecimalFormat("#");
-                break;
-            case 1:
-                // float_mode
-                decimalFormat = new DecimalFormat("#.00");
-                break;
-            case 2:
-                // percent_mode
-                decimalFormat = new DecimalFormat("#.#\'%\'");
-                break;
-            }
-        }
-        else {
+        int mode = typedArray.getInt(
+            R.styleable.NumberView_display_mode, -1
+        );
+        switch(mode) {
+        case 0:
+            // integer_mode
+            decimalFormat = new DecimalFormat("#");
+            break;
+        case 1:
+            // float_mode
+            decimalFormat = new DecimalFormat("#.00");
+            break;
+        case 2:
+            // percent_mode
+            decimalFormat = new DecimalFormat("#.#\'%\'");
+            break;
+        default:
             decimalFormat = new DecimalFormat(
                 typedArray.getString(
                     R.styleable.NumberView_display_format

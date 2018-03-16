@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.NumberPicker;
 
 import jp.louis.nsr.simplecounter.widgets.HoldableButton;
-import jp.louis.nsr.simplecounter.widgets.numberview.NumberView;
+import jp.louis.nsr.simplecounter.widgets.NumberView;
 
 public class MainActivity extends AppCompatActivity {
     private final int defaultChangeWidth = 1;
@@ -39,24 +39,24 @@ public class MainActivity extends AppCompatActivity {
         //
         HoldableButton plusButton = findViewById(R.id.plusButton);
         plusButton.setMainTask(
-            () -> numberView.addNumber(changeWidth)
+            () -> numberView.addValue(changeWidth)
         );
 
         HoldableButton minusButton = findViewById(R.id.minusButton);
         minusButton.setMainTask(
-            () -> numberView.addNumber(-changeWidth)
+            () -> numberView.addValue(-changeWidth)
         );
 
         //
         Button resetButton = findViewById(R.id.resetButton);
         resetButton.setOnClickListener(
-            view -> numberView.reset()
+            view -> numberView.resetValue()
          );
         resetButton.setOnLongClickListener(
             view -> {
                 numberPicker.setValue(defaultChangeWidth);
                 changeWidth = defaultChangeWidth;
-                numberView.reset();
+                numberView.resetValue();
                 return true;
             }
         );

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="NumberView">
-        <attr name="value" format="integer">30</attr>
+        <attr name="default_value" format="float" />
+        <attr name="display_format" format="string" />
     </declare-styleable>
 </resources>

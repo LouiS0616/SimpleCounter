@@ -9,7 +9,6 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import jp.louis.nsr.simplecounter.R;
-import jp.louis.nsr.simplecounter.widgets.numberview.NumberView;
 
 
 public class SeekWithLabel extends ConstraintLayout {
@@ -42,13 +41,13 @@ public class SeekWithLabel extends ConstraintLayout {
     }
     private void initViews() {
         final NumberView value = findViewById(R.id.value);
-        value.setNumber(0);
+        value.setValue(0);
 
         SeekBar seekBar = findViewById(R.id.seekBar);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                value.setNumber(progress);
+                value.setValue(progress);
             }
 
             @Override

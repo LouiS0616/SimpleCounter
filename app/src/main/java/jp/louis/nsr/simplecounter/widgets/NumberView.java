@@ -4,8 +4,12 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
+import android.util.SparseArray;
 
 import java.text.DecimalFormat;
+import java.text.Normalizer;
+import java.util.HashMap;
+import java.util.Map;
 
 import jp.louis.nsr.simplecounter.R;
 
@@ -13,6 +17,7 @@ import jp.louis.nsr.simplecounter.R;
 public class NumberView extends AppCompatTextView {
     private double defaultValue;
     private double nowValue;
+
     private DecimalFormat decimalFormat;
 
     public NumberView(Context context) {
@@ -35,11 +40,34 @@ public class NumberView extends AppCompatTextView {
         defaultValue = typedArray.getFloat(
             R.styleable.NumberView_default_value, .0f
         );
-        decimalFormat = new DecimalFormat(
-            typedArray.getString(
-                R.styleable.NumberView_display_format
-            )
-        );
+
+        //
+        if(typedArray.hasValue(R.styleable.NumberView_display_mode)) {
+            int mode = typedArray.getInt(
+                R.styleable.NumberView_display_mode, -1
+            );
+            switch(mode) {
+            case 0:
+                // integer_mode
+                decimalFormat = new DecimalFormat("#");
+                break;
+            case 1:
+                // float_mode
+                decimalFormat = new DecimalFormat("#.00");
+                break;
+            case 2:
+                // percent_mode
+                decimalFormat = new DecimalFormat("#.#\'%\'");
+                break;
+            }
+        }
+        else {
+            decimalFormat = new DecimalFormat(
+                typedArray.getString(
+                    R.styleable.NumberView_display_format
+                )
+            );
+        }
 
         typedArray.recycle();
     }

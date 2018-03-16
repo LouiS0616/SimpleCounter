@@ -15,12 +15,14 @@
         android:textColor="@color/colorText" />
 
     <jp.louis.nsr.simplecounter.widgets.NumberView
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
         android:id="@+id/value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textAlignment="textEnd"
         app:layout_constraintStart_toEndOf="@id/label"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        custom:display_mode="float_mode" />
 
     <SeekBar
         android:id="@+id/seekBar"

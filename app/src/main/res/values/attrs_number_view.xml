@@ -2,6 +2,11 @@
 <resources>
     <declare-styleable name="NumberView">
         <attr name="default_value" format="float" />
+        <attr name="display_mode" format="enum">
+            <enum name="integer_mode" value="0" />
+            <enum name="float_mode" value="1"/>
+            <enum name="percent_mode" value="2" />
+        </attr>
         <attr name="display_format" format="string" />
     </declare-styleable>
 </resources>

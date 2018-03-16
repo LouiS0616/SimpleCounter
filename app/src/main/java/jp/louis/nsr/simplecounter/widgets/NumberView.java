@@ -4,12 +4,8 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
-import android.util.SparseArray;
 
 import java.text.DecimalFormat;
-import java.text.Normalizer;
-import java.util.HashMap;
-import java.util.Map;
 
 import jp.louis.nsr.simplecounter.R;
 
